@@ -1,6 +1,8 @@
 #include "TimeRecorder.h"
 
 TimeRecorder::TimeRecorder(unsigned int processID)
+: m_EpollFd(0)
+, m_ListenFd(0)
 {
     m_ProcessID = processID;
 }

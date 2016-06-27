@@ -28,9 +28,12 @@ public:
         return instance;
     }
 
+    int GetProcessId(void);
+
 private:
     map<unsigned int, TimeStamp> m_TsMap;
     unsigned int m_ProcessID;
-public:
-    int GetProcessId(void);
+    int m_EpollFd;
+    int m_ListenFd;
+
 };

@@ -58,3 +58,5 @@ timestamp_recorder/timestamp_recorder.vcproj
 *.manifest
 timestamp_recorder/timestamp_recorder.vcproj.DESKTOP-AVO59DR.administor.user
 *.suo
+*.rsp
+Debug/timestamp_recorder.ilk
