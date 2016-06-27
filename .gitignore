@@ -45,3 +45,16 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+*.obj
+Debug/timestamp_recorder.exe
+Debug/timestamp_recorder.pdb
+*.ncb
+timestamp_recorder.sln
+*.htm
+*.dep
+timestamp_recorder/Debug/vc90.pdb
+*.idb
+timestamp_recorder/timestamp_recorder.vcproj
+*.manifest
+timestamp_recorder/timestamp_recorder.vcproj.DESKTOP-AVO59DR.administor.user
+*.suo
