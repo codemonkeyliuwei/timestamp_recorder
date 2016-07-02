@@ -14,17 +14,17 @@ struct TimeStamp
     vector<unsigned long long> ts;
 };
 
-class TimeRecorder
+class TimeRecorderInstance
 {
 private:
-    TimeRecorder(unsigned int processID);
-    TimeRecorder(const TimeRecorder &);
-    TimeRecorder & operator = (const TimeRecorder &);
+    TimeRecorderInstance(unsigned int processID);
+    TimeRecorderInstance(const TimeRecorderInstance &);
+    TimeRecorderInstance & operator = (const TimeRecorderInstance &);
 
 public:
-    static TimeRecorder& GetInstance(unsigned int processID)
+    static TimeRecorderInstance& GetInstance(unsigned int processID)
     {
-        static TimeRecorder instance(processID);
+        static TimeRecorderInstance instance(processID);
         return instance;
     }
 
