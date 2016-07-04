@@ -1,8 +1,6 @@
 #include "TimeRecorderInstance.h"
 
-TimeRecorderInstance::TimeRecorderInstance(unsigned int processID)
-: m_EpollFd(0)
-, m_ListenFd(0)
+TimeRecorderInstance::TimeRecorderInstance(u32 processID)
 {
     m_ProcessID = processID;
 }

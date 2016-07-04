@@ -1,39 +1,45 @@
-#include <map>
-#include <vector>
-#include <string>
 
-using std::map;
-using std::vector;
+#include <string>
+#include "typedef.h"
+
+#ifdef _WIN32
+#include <process.h>
+#else
+#include <unistd.h>
+#endif // _WIN32
+
+
 using std::string;
 
 #pragma once
 
-struct TimeStamp
-{
-    string operation;
-    vector<unsigned long long> ts;
-};
+
 
 class TimeRecorderInstance
 {
 private:
-    TimeRecorderInstance(unsigned int processID);
+    TimeRecorderInstance(u32);
     TimeRecorderInstance(const TimeRecorderInstance &);
     TimeRecorderInstance & operator = (const TimeRecorderInstance &);
 
 public:
-    static TimeRecorderInstance& GetInstance(unsigned int processID)
+    static TimeRecorderInstance& GetInstance(void)
     {
-        static TimeRecorderInstance instance(processID);
+        static TimeRecorderInstance instance(_getpid());
         return instance;
     }
 
     int GetProcessId(void);
 
+    void TimeRecordNew(string op, u64 req);
+
+    void TimeRecordAppend(u64 req);
+
+    void TimeRecordEnd(u64 req);
+
 private:
-    map<unsigned int, TimeStamp> m_TsMap;
+
     unsigned int m_ProcessID;
-    int m_EpollFd;
-    int m_ListenFd;
+    
 
 };
