@@ -22,6 +22,8 @@ private:
     TimeRecorderInstance(const TimeRecorderInstance &);
     TimeRecorderInstance & operator = (const TimeRecorderInstance &);
 
+    int StartMonitorThread(void);
+
 public:
     static TimeRecorderInstance& GetInstance(void)
     {
@@ -40,6 +42,5 @@ public:
 private:
 
     unsigned int m_ProcessID;
-    
 
 };
